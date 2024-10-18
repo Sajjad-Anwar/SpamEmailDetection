@@ -23,6 +23,6 @@ if st.button("Predict"):
     
     # Display the result
     if prediction[0] == 1:
-        st.write("This email is Spam.")
+        st.write("🚫 This is a **Spam Email**!")
     else:
         st.write("This email is Not Spam.")
