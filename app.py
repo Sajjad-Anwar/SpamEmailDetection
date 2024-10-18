@@ -2,6 +2,12 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+def clean_text(text):
+    text = re.sub(r'\W', ' ', text)  # Remove special characters
+    text = text.lower()               # Convert to lowercase
+    text = re.sub(r'\s+', ' ', text)  # Remove extra spaces
+    return text
+
 # Load the model and vectorizer
 model = joblib.load('spam_detector_model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
